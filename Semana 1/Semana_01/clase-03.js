@@ -46,4 +46,5 @@ while ( puntajes.usuario < 3  &&  puntajes.compu < 3 ) {
 // 1- Modificar el objeto puntajes para poder contabilizar los empates tambien.
 // 2- Modificar el bucle para poder sumar tambien la cantidad de empates.
 // 3- Mostrar en cada partida el resultado al usuario.
-// 4- Mostrar finalmente la cantidad de partidas jugadas y que sepa cuantas ganó, perdió o empató durante el juego.
+// 4- Mostrar finalmente la cantidad de partidas jugadas y que sepa cuantas ganó,
+// perdió o empató durante el juego.
