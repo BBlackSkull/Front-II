@@ -27,10 +27,10 @@ const listadoNoticias = [{
     foto: "./img/escuela.webp"
 }
 ]
-
+const main = document.querySelector('main');
 // Recorro el array
 
-listadoNoticias.forEach(noticia => {
+/*listadoNoticias.forEach(noticia => {
     // Creamos los elementos
     const articulo = document.createElement('article');
     const titulo = document.createElement('h2');
@@ -56,7 +56,7 @@ listadoNoticias.forEach(noticia => {
     areaNoticias.appendChild(articulo);
 
 });
-
+*/
 
 /* -------------------------------------------------------------------------- */
 /*                          CONSIGNA MESA DE TRABAJO                          */
@@ -71,8 +71,18 @@ listadoNoticias.forEach(noticia => {
 
 
 function renderizarElementos(){
+    listadoNoticias.forEach(noticia => {
+        const articulo = `<article>
+        <h2>${noticia.titulo}</h2>
+        <img src =${noticia.foto}alt="">
+        <p>${noticia.epigrafe}</p>
+        </article>`
+        
+        main.innerHtml += articulo
 
-}
+    })
+
+};
 
 
 renderizarElementos();
