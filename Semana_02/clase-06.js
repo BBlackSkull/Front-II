@@ -30,7 +30,7 @@ const listadoNoticias = [{
 const main = document.querySelector('main');
 // Recorro el array
 
-/*listadoNoticias.forEach(noticia => {
+listadoNoticias.forEach(noticia => {
     // Creamos los elementos
     const articulo = document.createElement('article');
     const titulo = document.createElement('h2');
@@ -56,7 +56,7 @@ const main = document.querySelector('main');
     areaNoticias.appendChild(articulo);
 
 });
-*/
+
 
 /* -------------------------------------------------------------------------- */
 /*                          CONSIGNA MESA DE TRABAJO                          */
@@ -69,7 +69,7 @@ const main = document.querySelector('main');
 // Ejemplo: si quiero insertar un titulo en el body, haría los siguiente:
 // document.querySelector('body').innerHTML += `<h1>Nuevo Título</h1>`;
 
-
+/*
 function renderizarElementos(){
     listadoNoticias.forEach(noticia => {
         const articulo = `<article>
@@ -86,3 +86,4 @@ function renderizarElementos(){
 
 
 renderizarElementos();
+*/
