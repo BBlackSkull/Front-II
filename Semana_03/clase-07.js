@@ -63,7 +63,7 @@ function renderizarAlbumes(lista){
         <li>
         <p> ${album.nombre} </p>
         <img src = "${album.imagen}" alt= " ${album.imagen}">
-        <i class = "fa fa-heart favorito "> </i>
+        <i id ="${album.id}"class = "fa fa-heart ${album.like ? 'favorito' : " "} "> </i>
         </li>
         `    
    });
@@ -86,8 +86,32 @@ function renderizarAlbumes(lista){
 // 2- contar la cantidad de favoritos y pintarlo en el span correspondiente
 // 3- tener en cuenta: usar las palabra en plural o en singular, según cuando
 // sea necesario ( es decir: 1 album, 1 favorito / 2 albumes, 3 favoritos )
-function mostrarDatosEnPerfil() {
+
+function mostrarDatosEnPerfil(cantidad) {
     
+    let cantAlbumes = document.querySelector('#cant-albums');
+    let cantFav = document.querySelector('#cant-favoritos');
+    
+    let numAblum = cantidad.length;
+    let likes = 1;
+
+    if ( numAblum <= 1){
+        cantAlbumes.innerText = numAblum + ' Album';
+    }else {
+        cantAlbumes.innerText = numAblum + ' Albumes';
+    }
+
+    cantidad.forEach((album) => {
+
+        album.like ? likes ++ : likes
+        
+    });
+
+    if (likes == 1){
+        cantFav.innerText = likes + ' Favorito';
+    }else {
+        cantFav.innerText = likes + ' Favoritos';
+    }
 
 }
-mostrarDatosEnPerfil();
+mostrarDatosEnPerfil(albumesFamosos);
