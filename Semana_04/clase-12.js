@@ -64,3 +64,12 @@ inputs.forEach( inputs => {
 // 3 - dentro la caja debe mostrar un párrafo con el mensaje: "¡Formulario completado con éxito!"
 // 4 - a su vez se debe deshabilitar el boton del formulario
 // 5 - finalmente pasados 4 segundos: se debe eliminar esa caja, habilitar el boton y limpiar el formulario
+
+function mostrarMensaje (listado){
+ if (listado.length < 1){
+
+    const button = document.querySelector('button');
+    button.setAttribute('')
+ }
+
+}
