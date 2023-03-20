@@ -37,6 +37,12 @@ function botonCerrar(){
         cerrar.addEventListener('click', function(){
             localStorage.removeItem('usuario');
             location.herf = 'index.html';
+
+            const confirmacion = confirm('Desea cerrar sesion')
+            if (confirmacion === true){
+                localStorage.clear();
+                location.href = 'index.html'; 
+            }
         })
 
 }
