@@ -77,6 +77,7 @@ function consultar(api){
     .then(respuesta => respuesta.json())
     .then(usuario =>{
         console.log('Nombre: ' + usuario.name + '\nUserName: ' + usuario.username + '\nEmail; '+ usuario.email);
+        console.log(usuario)
     })
 }
 consultar(api);
