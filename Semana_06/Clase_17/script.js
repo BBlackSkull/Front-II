@@ -14,6 +14,7 @@ let api = 'https://restcountries.com/v3.1/all';
 
 btn.addEventListener('click', function(){
 
+    btnOFF();
     
     fetch(api)
     .then(response => response.json())
@@ -23,12 +24,14 @@ btn.addEventListener('click', function(){
         renderizar(pais);
     })
     .catch (error => {
-        alert("Ocurrio un error");
+    
         console.log(error);
-        renderizar(pais);
+        
     })
     .finally(()=>{
-        btn.setAttribute('disabled');
+        console.log('Fin de la consulta')
+
+        btnON();
     })
     
 })
@@ -54,4 +57,16 @@ function renderizar(lista){
         `
     });
 
+}
+
+function btnON(){
+    btn.style.color= 'blue';
+    btn.style.textDecoration = 'none';
+    btn.setAttribute('disabled','disabled')
+}
+
+function btnOFF(){
+    btn.style.color = 'black';
+    btn.style.textDecoration = 'black';
+    btn.removeAttribute('disabled');
 }
