@@ -40,13 +40,13 @@ btn.addEventListener('click', function(){
 function  btnOFF(){
     btn.style.color = 'black';
     btn.style.textDecoration = 'line-through';
-    btn.setAttribute('disabled', 'disabled');
+    btn.removeAttribute('disabled');
 }
 
 function btnON(){
     btn.style.color = 'blue';
     btn.style.textDecoration = 'none';
-    btn.removeAttribute('disabled');
+    btn.setAttribute('disabled', 'disabled');
 }
 
 function renderizarElementos(listado){
