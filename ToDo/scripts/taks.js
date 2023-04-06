@@ -14,7 +14,7 @@ window.addEventListener('load', function () {
 
   /* ---------------- variables globales y llamado a funciones ---------------- */
   
-  const btnCerrarSesion = document.querySelector('$#closeApp');
+  const btnCerrarSesion = document.querySelector('#closeApp');
   const nuevaTarea = documnet.querySelector('#nuevaTarea')
 
   /* -------------------------------------------------------------------------- */
