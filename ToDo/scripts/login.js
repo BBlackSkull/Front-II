@@ -1,8 +1,8 @@
 window.addEventListener('load', function () {
     /* ---------------------- obtenemos variables globales ---------------------- */
-   const from = this.document.querySelector('form');
-   const inputEmail =this.document.querySelector('inputEmail');
-   const inputPassword = this.document.querySelector('inputPassword');
+   const form = document.querySelector('form');
+   const inputEmail = document.querySelector('#inputEmail');
+   const inputPassword = document.querySelector('#inputPassword');
     
 
 
@@ -42,8 +42,16 @@ window.addEventListener('load', function () {
 
         fetch(endPoint,settings)
         .then(response => response.json())
-        .then((json)=>{
-            location.replace('mis-tareas.html');
+        .then((json)=>{ 
+            console.log(json);
+            if(json.jwt){
+                console.log('Datos correctos');
+                localStorage.setItem('jwt', JSON.stringify(json.jwt));
+
+                location.replace('mis-tareas.html');
+            }else {
+                alert('Error' + json);
+            }
         }) 
         .catch (error =>{
             console.log('ocurrio un error');

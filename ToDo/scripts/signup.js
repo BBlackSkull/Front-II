@@ -26,7 +26,6 @@ window.addEventListener('load', function () {
             
         }
         
-        //console.log(datos);
         
         const config = {
             method :'POST',
