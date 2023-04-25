@@ -69,7 +69,7 @@ window.addEventListener('load', function () {
             }
         }) 
         .catch (error =>{
-            console.log('ocurrio un error');
+            console.log('ocurrio un error', error);
         })
 
 

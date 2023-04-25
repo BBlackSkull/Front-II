@@ -15,7 +15,10 @@ window.addEventListener('load', function () {
   /* ---------------- variables globales y llamado a funciones ---------------- */
   
   const btnCerrarSesion = document.querySelector('#closeApp');
-  const nuevaTarea = documnet.querySelector('#nuevaTarea')
+  const formNuevaTarea = documnet.querySelector('.nueva-tarea');
+  const userName = document.querySelector('.user-info p');
+  obtenerNombreUsuario();
+  consultarTareas();
 
   /* -------------------------------------------------------------------------- */
   /*                          FUNCIÓN 1 - Cerrar sesión                         */
@@ -23,6 +26,11 @@ window.addEventListener('load', function () {
 
   btnCerrarSesion.addEventListener('click', function () {
    
+    if(confirm('¿Desea salir de la App?') ){
+      
+      localStorage.removeItem('jwt');
+      location.replace('index.html');
+    }
 
 
 
