@@ -41,8 +41,22 @@ window.addEventListener('load', function () {
   /* -------------------------------------------------------------------------- */
 
   function obtenerNombreUsuario() {
-   
+    
+      const endPoint = 'https://todo-api.ctd.academy/v1/users/getMe';
+      
+      const config = {
+        method: 'GET',
+        headers: {
+          authorization: jwt
+        }
+      }
 
+        fetch(endPoint,config)
+        .then(resp => resp.json())
+        .then(data => {
+
+          const nombre = `${data.firstName} ${data.lastName}`;
+        })
 
 
   };
