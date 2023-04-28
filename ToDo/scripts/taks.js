@@ -15,7 +15,7 @@ window.addEventListener('load', function () {
   /* ---------------- variables globales y llamado a funciones ---------------- */
   
   const btnCerrarSesion = document.querySelector('#closeApp');
-  const formNuevaTarea = documnet.querySelector('.nueva-tarea');
+  const formCrearTarea = document.querySelector('.nueva-tarea');
   const userName = document.querySelector('.user-info p');
   obtenerNombreUsuario();
   consultarTareas();
@@ -68,10 +68,21 @@ window.addEventListener('load', function () {
 
   function consultarTareas() {
     
-    
+    const endPoint = 'https://todo-api.ctd.academy/v1/tasks';
 
+    const config = {
+      method: 'GET',
+      headers: {
+        authorization: jwt
+      }
+    }
 
-
+      fetch(endPoint,config)
+      .then(respo => respo.json())
+      .then(data => {
+        console.log(data);
+        renderizarTareas(data);
+      })
   };
 
 
@@ -83,7 +94,7 @@ window.addEventListener('load', function () {
     
     event.preventDefault();
 
-    const url = 'https://todo-api.ctd.academy/v1/tasks';
+    const endPoint = 'https://todo-api.ctd.academy/v1/tasks';
     
 
 
